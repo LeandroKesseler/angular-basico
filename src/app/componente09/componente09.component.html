@@ -1,3 +1,10 @@
+<p>Preencha os dados abaixo:</p>
 <h1>{{nome}}</h1>
+<h1>{{cidade}}</h1>
+<h1>{{idade}}</h1>
 
-<input type="text" [(ngModel)]="nome">
+<form>
+    <input type="text" name="nome" [(ngModel)]="nome" placeholder="Nome">
+    <input type="text" name="cidade" [(ngModel)]="cidade" placeholder="Cidade">
+    <input type="text" name="idade" [(ngModel)]="idade" placeholder="Idade">
+</form>
