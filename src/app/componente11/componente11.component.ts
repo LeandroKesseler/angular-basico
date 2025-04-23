@@ -27,6 +27,9 @@ formulario = new FormGroup ({
 // Vetor - contendo informação relativo a pessoa (nome, idade e cidade)
   vetor:Pessoa [] = [];
 
+//Armazenar índice da pessoa selecionada
+indice:number = -1;
+
 // Função de cadastro - guarda as informações no vetor/array
   cadastrar() {
 
@@ -38,6 +41,24 @@ formulario = new FormGroup ({
 
     //Visualização via console
     //console.table(this.vetor);
+
+  }
+
+  //Função de seleção
+  selecionar(indice:number){
+
+    // Atribuir o índice da pessoa
+    this.indice = indice;
+
+    // Atribuir os dados da pessoa no formulário
+    this.formulario.setValue({
+      nome : this.vetor[indice].nome,
+      idade: this.vetor[indice].idade,
+      cidade: this.vetor[indice].cidade
+    });
+
+    // Visibilidade dos botões
+    this.btnCadastrar = false;
 
   }
 
